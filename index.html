@@ -53,7 +53,7 @@ let sl=0;
 onContent(()=>{
   const set=SV.map(s=>'<span>'+t(s[0],s[1])+'</span><span>✦</span>').join('');
   $('mq').innerHTML=set+set+set+set;
-  document.querySelector('#ws .track').innerHTML=DB.work.map(w=>'<article class="slide" data-k="work" data-id="'+esc(w.id)+'"><a class="im" data-view="'+esc(w.id)+'"'+(w.video?' data-video="'+esc(w.video)+'"':'')+' href="'+esc(w.img)+'" target="_blank" rel="noopener"><img src="'+esc(w.img)+'" alt="'+esc(L(w.name))+'" loading="lazy">'+(w.video?'<span class="play">▶</span>':'')+'</a><div class="cap"><span class="tag">'+esc(t(w.cat,{Design:'تصميم',Content:'محتوى','Media Buying':'شراء إعلانات'}[w.cat]||w.cat))+'</span><h3>'+esc(L(w.name))+'</h3><p>'+esc(L(w.desc))+'</p></div></article>').join('');
+  document.querySelector('#ws .track').innerHTML=DB.work.map(w=>'<article class="slide" data-k="work" data-id="'+esc(w.id)+'"><a class="im" data-view="'+esc(w.id)+'"'+(w.video?' data-video="'+esc(w.video)+'"':'')+' href="'+esc(w.img)+'" target="_blank" rel="noopener"><img src="'+esc(w.img)+'" alt="'+esc(L(w.name))+'" loading="lazy">'+(w.video?'<span class="vplay">▶</span>':'')+'</a><div class="cap"><span class="tag">'+esc(t(w.cat,{Design:'تصميم',Content:'محتوى','Media Buying':'شراء إعلانات'}[w.cat]||w.cat))+'</span><h3>'+esc(L(w.name))+'</h3><p>'+esc(L(w.desc))+'</p></div></article>').join('');
   document.querySelector('#cs .track').innerHTML=DB.clients.map(c=>'<div class="logo-card" data-k="clients" data-id="'+esc(c.id)+'"><div class="lw"><img src="'+esc(c.logo)+'" alt="'+esc(c.name)+'"></div></div>').join('');
   if(!sl){sl=1;slider($('ws'),4200);slider($('cs'),2200)}else{$('ws')._refresh();$('cs')._refresh()}
 });

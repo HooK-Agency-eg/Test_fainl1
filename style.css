@@ -210,8 +210,8 @@ footer .fr{display:grid;gap:14px;justify-items:end}
 .soc .edit{inset-inline-end:-44px;top:3px}
 /* video */
 .slide .im,.card.work a{position:relative}
-.play{position:absolute;inset:0;margin:auto;width:64px;height:64px;border-radius:50%;background:#000a;color:#fff;display:grid;place-items:center;font-size:1.6rem;line-height:1;padding-inline-start:4px;transition:.25s;pointer-events:none}
-.im:hover .play,.card.work a:hover .play{background:var(--o);transform:scale(1.12)}
+.vplay{position:absolute;inset:0;margin:auto;width:64px;height:64px;border-radius:50%;background:#000a;color:#fff;display:grid;place-items:center;font-size:1.6rem;line-height:1;padding-inline-start:4px;transition:.25s;pointer-events:none}
+.im:hover .vplay,.card.work a:hover .vplay{background:var(--o);transform:scale(1.12)}
 dialog.vd{padding:0;background:#000;width:min(920px,96vw);border-radius:20px;overflow:hidden}
 dialog.vd #vbox{aspect-ratio:16/9;width:100%}
 dialog.vd iframe,dialog.vd video{width:100%;height:100%;border:0;display:block;background:#000}

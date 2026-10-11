@@ -17,7 +17,7 @@ const vio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){vio.u
 onContent(()=>{
   $('tabs').innerHTML=CATS.map(c=>'<button data-f="'+c[0]+'" aria-pressed="'+(c[0]==cf)+'">'+t(c[1],c[2])+'</button>').join('');
   const cn=k=>t(k,(CATS.find(c=>c[0]==k)||[])[2]||k);
-  $('work').innerHTML=DB.work.filter(w=>cf=='all'||w.cat==cf).map(w=>'<article class="card work" data-k="work" data-id="'+esc(w.id)+'"><a data-view="'+esc(w.id)+'"'+(w.video?' data-video="'+esc(w.video)+'"':'')+' href="'+esc(w.img)+'" target="_blank" rel="noopener" aria-label="'+esc(L(w.name))+'"><img src="'+esc(w.img)+'" alt="'+esc(L(w.name))+'" loading="lazy">'+(w.video?'<span class="play">▶</span>':'')+'</a><span class="tag">'+esc(cn(w.cat))+'</span><h3>'+esc(L(w.name))+'</h3><p>'+esc(L(w.desc))+'</p></article>').join('');
+  $('work').innerHTML=DB.work.filter(w=>cf=='all'||w.cat==cf).map(w=>'<article class="card work" data-k="work" data-id="'+esc(w.id)+'"><a data-view="'+esc(w.id)+'"'+(w.video?' data-video="'+esc(w.video)+'"':'')+' href="'+esc(w.img)+'" target="_blank" rel="noopener" aria-label="'+esc(L(w.name))+'"><img src="'+esc(w.img)+'" alt="'+esc(L(w.name))+'" loading="lazy">'+(w.video?'<span class="vplay">▶</span>':'')+'</a><span class="tag">'+esc(cn(w.cat))+'</span><h3>'+esc(L(w.name))+'</h3><p>'+esc(L(w.desc))+'</p></article>').join('');
   document.querySelectorAll('#work .card').forEach(c=>vio.observe(c));
 });
 $('tabs').onclick=e=>{const b=e.target.closest('button');if(b){cf=b.dataset.f;runHooks()}};
